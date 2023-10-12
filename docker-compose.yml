@@ -4,14 +4,14 @@ services:
     build:
       context: .
     ports:
-      -'3000:3000'
+      - '3000:3000'
     command: npm start
     stdin_open: true
 
     nginx:
       image: nginx:latest
       ports:
-      -'80:80'
+        - '80:80'
       volumes:
         - ./nginx.conf:/etc/nginx/nginx.conf
         depends_on:
